@@ -1,0 +1,15 @@
+{
+    "env": {
+        "es2020": true,
+        "node": true
+    },
+    "globals": {
+        "use": true,
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "rules": {}
+}
