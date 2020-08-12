@@ -15,6 +15,7 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
+Route.get('status', () => ({ services: 'ok' }))
 Route.post('sessions', 'SessionController.store').validator('Session')
 Route.post('users', 'UserController.store').validator('User')
 

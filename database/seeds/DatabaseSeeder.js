@@ -14,11 +14,11 @@ class DatabaseSeeder {
     })
     const createInvite = await Permission.create({
       slug: 'invites_create',
-      name: 'Convidar membros'
+      name: 'Invite members'
     })
     const createProject = await Permission.create({
       slug: 'projects_create',
-      name: 'Criar Projetos'
+      name: 'Create Projects'
     })
 
     const admin = await Role.create({
@@ -27,18 +27,18 @@ class DatabaseSeeder {
     })
     const moderator = await Role.create({
       slug: 'moderator',
-      name: 'Moderador'
+      name: 'Moderator'
     })
     await Role.create({
       slug: 'visitor',
-      name: 'Visitante'
+      name: 'Visitor'
     })
 
     await admin.permissions().attach([createInvite.id, createProject.id])
     await moderator.permissions().attach([createProject.id])
 
     const team = await user.teams().create({
-      name: 'Lab4',
+      name: 'FDOORS Lab',
       user_id: user.id
     })
 
