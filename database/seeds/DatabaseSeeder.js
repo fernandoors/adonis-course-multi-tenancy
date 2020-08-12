@@ -3,13 +3,14 @@
 const User = use('App/Models/User')
 const Role = use('Adonis/Acl/Role')
 const Permission = use('Adonis/Acl/Permission')
+const Env = use('Env')
 
 class DatabaseSeeder {
   async run() {
     const user = await User.create({
       name: 'SysAdmin',
-      email: 'contact@fdoors.com.br',
-      password: '12341234'
+      email: Env.get('SYS_ADMIN_EMAIL'),
+      password: Env.get('SYS_ADMIN_PASSWORD')
     })
     const createInvite = await Permission.create({
       slug: 'invites_create',
